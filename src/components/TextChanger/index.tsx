@@ -1,13 +1,13 @@
 import {Button} from "../Button";
 import {useState} from "react";
 
-export const TextChanger: React.FC<any> = () => {
+export const TextChanger: React.FC = () => {
     const personNames = ['Nick', 'Coach', 'Ellis', 'Rochelle'];
 
     const [index, setState] = useState(0);
 
     function showNextPerson(): void {
-        setState(index > personNames.length - 2 ? 0 : index + 1);
+        setState((index + 1) % personNames.length);
     }
 
     return (
