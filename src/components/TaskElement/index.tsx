@@ -1,10 +1,14 @@
-export type TaskProps = {
-    id: string;
+export type Task = {
+    id: number;
     name: string;
 }
 
-export const TaskElement: React.FC<TaskProps> = (props) => {
+type TaskElementProps = {
+    task: Task;
+}
+
+export const TaskElement: React.FC<TaskElementProps> = ({task : {name}}) => {
     return (
-        <li key={props.id}>{props.name}</li>
+        <li>{name}</li>
     )
 }

@@ -1,13 +1,13 @@
-import {TaskProps} from "../TaskElement";
+import {TaskElement, Task} from "../TaskElement";
 
 type TaskListProps = {
-   tasks: TaskProps[];
+   tasks: Task[];
 }
 
-export const TaskList: React.FC<TaskListProps> = (props: TaskListProps) => {
+export const TaskList: React.FC<TaskListProps> = ({tasks}) => {
     return (
         <ul>
-            {props.tasks.map((task) => (<li key={task.id}>{task.name}</li>))}
+            {tasks.map((task) => (<TaskElement key={task.id} task={task}/>))}
         </ul>
     )
 }
