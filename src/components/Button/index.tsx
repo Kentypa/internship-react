@@ -1,8 +1,10 @@
+import {ComponentWithChildren} from "../../types/component-with-children.tsx";
+
 type ButtonProps = {
     handleClick: () => void;
 }
 
-export const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({handleClick, children}) => {
+export const Button: ComponentWithChildren<ButtonProps> = ({handleClick, children}) => {
     return (
         <button onClick={handleClick}>
             {children}

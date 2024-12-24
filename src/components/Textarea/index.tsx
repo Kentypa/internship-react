@@ -1,10 +1,12 @@
+import React from "react";
+
 type TextareaProps = {
-    name: string,
-    handleChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
+    value: string;
+    handleChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-export const Textarea: React.FC<TextareaProps> = ({name, handleChange}) => {
+export const Textarea: React.FC<TextareaProps> = ({value, handleChange}) => {
     return (
-        <textarea value={name} onChange={handleChange}/>
+        <textarea name="product-name-area" value={value} onChange={handleChange}/>
     )
 }
