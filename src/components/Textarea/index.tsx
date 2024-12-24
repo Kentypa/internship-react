@@ -7,6 +7,6 @@ type TextareaProps = {
 
 export const Textarea: React.FC<TextareaProps> = ({value, handleChange}) => {
     return (
-        <textarea value={value} onChange={handleChange}/>
+        <textarea name="product-name-area" value={value} onChange={handleChange}/>
     )
 }

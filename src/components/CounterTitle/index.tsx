@@ -1,14 +1,9 @@
-import React from "react";
+import {ComponentWithChildren} from "../../types/component-with-children.tsx";
 
-type CounterTitleProps = {
-    text: string;
-    value: number;
-}
-
-export const CounterTitle: React.FC<CounterTitleProps> = ({text, value}) => {
+export const CounterTitle: ComponentWithChildren<object> = ({children}) => {
     return (
         <p>
-            {text + value}
+            {children}
         </p>
     )
 }

@@ -10,6 +10,7 @@ function App() {
         <>
             <div className="card">
                 <input
+                    name="is-first-task"
                     type="checkbox"
                     checked={isFirstTask}
                     onChange={e => {

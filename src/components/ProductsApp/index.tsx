@@ -1,29 +1,12 @@
-import {ProductList} from "../ProductList";
 import React, {useState} from "react";
-import {ProductElementProps} from "../ProductElement";
 import {Button} from "../Button";
 import {Textarea} from "../Textarea";
 import {useReducer} from "react";
-import {ProductContexts, ProductDispatchContexts} from "../ProductContexts";
+import {ProductContexts} from "../../contexts/product-context.tsx";
+import {ProductDispatchContexts} from "../../contexts/product-dispatch-contexts.tsx";
+import {ProductList} from "../ProductList";
+import {ProductReducer} from "../../reducers/product-reducer.tsx";
 
-export type Actions = {
-    id: number;
-    type: string;
-    name: string;
-}
-
-function ProductReducer(products: ProductElementProps[], action: Actions) {
-    switch (action.type) {
-        case "added": {
-            return [...products, {id: action.id, name: action.name}];
-        }
-        case "delete": {
-            return products.filter((product) => product.id !== action.id);
-        }
-        default:
-            return products;
-    }
-}
 
 export const ProductsApp: React.FC = () => {
     const [products, dispatch] = useReducer(ProductReducer, []);
@@ -33,7 +16,7 @@ export const ProductsApp: React.FC = () => {
     function handleAddProducts(name: string) {
         setProductID(productID + 1);
         dispatch({
-            type: "added",
+            type: "add",
             id: productID,
             name:  name
         })

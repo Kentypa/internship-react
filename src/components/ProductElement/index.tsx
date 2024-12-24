@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {Button} from "../Button";
-import {ProductDispatchContexts} from "../ProductContexts";
+import {ProductDispatchContexts} from "../../contexts/product-dispatch-contexts.tsx";
 
 export type ProductElementProps = {
     id: number;
@@ -8,12 +8,12 @@ export type ProductElementProps = {
 }
 
 export const ProductElement: React.FC<ProductElementProps> = ({id ,name}) => {
-    const dispatch = useContext(ProductDispatchContexts);
+    const productDispatch = useContext(ProductDispatchContexts);
 
     return (
         <section>
             <li>{name}</li>
-            <Button handleClick={()=>{dispatch({
+            <Button handleClick={()=>{productDispatch({
                 name,
                 type: "delete",
                 id,

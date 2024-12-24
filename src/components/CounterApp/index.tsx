@@ -15,7 +15,9 @@ export const Counter: React.FC = () => {
 
     return (
         <div>
-            <CounterTitle text={"Current counter value: "} value={counterValue} />
+            <CounterTitle>
+                {"Current counter value: " + counterValue}
+            </CounterTitle>
             <Button handleClick={handleCounterIncrement}>
                 Add
             </Button>
