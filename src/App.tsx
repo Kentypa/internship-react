@@ -1,26 +1,9 @@
 import './App.css'
-import {Counter} from "./components/CounterApp";
-import {ProductsApp} from "./components/ProductsApp";
-import {useState} from "react";
+import {CharacterApp} from "./components/CharacterApp";
 
 function App() {
-    const [isFirstTask, setTask] = useState(true);
-
     return (
-        <>
-            <div className="card">
-                <input
-                    name="is-first-task"
-                    type="checkbox"
-                    checked={isFirstTask}
-                    onChange={e => {
-                        setTask(e.target.checked);
-                    }}
-                />
-                <br/> is first task
-            </div>
-            {isFirstTask ? (<Counter />) : (<ProductsApp/>)}
-        </>
+        <CharacterApp />
     )
 }
 
