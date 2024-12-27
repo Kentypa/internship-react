@@ -10,7 +10,7 @@ export const CharacterApp: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        const fetchCharacters = async () => {
+        const fetchCharacters: () => Promise<void> = async () => {
             try {
                 const fetchedCharacters: Character[] = [];
 
@@ -21,7 +21,6 @@ export const CharacterApp: React.FC = () => {
 
                 setCharacters(fetchedCharacters);
                 setLoading(true);
-                console.log(characters);
             } catch (error) {
                 console.error(error);
             }
