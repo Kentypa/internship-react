@@ -26,7 +26,7 @@ export const CharacterApp: React.FC = () => {
             }
         }
 
-        fetchCharacters();
+        fetchCharacters().then();
     }, []);
 
     return (
