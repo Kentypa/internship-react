@@ -9,7 +9,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({isAuthorized}) =>
     return (
         <>
             {isAuthorized ?
-                <Outlet /> : <Navigate to="/" />}
+                <Outlet /> : <Navigate to="/task4/authorization/" />}
         </>
     )
 }

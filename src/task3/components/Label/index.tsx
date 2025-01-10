@@ -1,4 +1,4 @@
-import {ComponentWithChildren} from "../../types/component-with-children.tsx";
+import {ComponentWithChildren} from "../../../task3/types/component-with-children.tsx";
 
 type LabelProps = {
     htmlFor: string;
