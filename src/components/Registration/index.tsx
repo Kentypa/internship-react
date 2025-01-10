@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {UserInformation} from "../../types/user-information.tsx";
 import {Button} from "../Button";
 import {useNavigate} from "react-router";
+import {Label} from "../Label";
+import {Input} from "../Input";
 
 export type RegistrationProps = {
     availableAccounts: UserInformation[];
@@ -24,23 +26,25 @@ export const Registration: React.FC<RegistrationProps> = ({availableAccounts, se
             <h1>Registration Form</h1>
             <section>
                 <div className="container">
-                    <label htmlFor="email"><b>Email</b></label>
-                    <input
+                    <Label htmlFor="email">Email</Label>
+                    <Input
                         type="email"
-                        placeholder="Enter Email"
-                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        required={true}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        required
+                        autoComplete="on"
                     />
-                    <label htmlFor="psw"><b>Password</b></label>
-                    <input
+                    <Label htmlFor="psw">Password</Label>
+                    <Input
                         type="password"
-                        placeholder="Enter Password"
-                        name="psw"
+                        id="psw"
+                        placeholder="Password"
+                        required={true}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        required
+                        autoComplete="on"
                     />
                     <Button handleClick={addUser}>Registration</Button>
                 </div>
