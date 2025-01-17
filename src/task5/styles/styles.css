@@ -1,0 +1,19 @@
+h1 {
+    font-size: 20px;
+}
+
+.task5-styles {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.task5-styles.light {
+    background-color: white;
+    color: black;
+}
+
+.task5-styles.dark {
+    background-color: black;
+    color: white;
+}
