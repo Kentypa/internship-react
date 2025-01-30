@@ -1,75 +1,89 @@
+@import "tailwindcss";
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
 .main-layout {
-  display: flex;
+    display: flex;
 }
 
 .side-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 200px;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .nav-item {
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: darkred;
-  padding: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: darkred;
+    padding: 10px;
 }
 
 .nav-item:hover {
-  color: red;
+    color: red;
 }
 
 .content {
-  margin-left: 220px;
-  padding: 20px;
-  flex-grow: 1;
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
 }
 
 input {
-  border: 1px solid rgb(172, 171, 171);
-  border-radius: 10px;
-  padding: 1vw 1vw;
-  outline: none;
-  margin: 5px;
+    border: 1px solid rgb(172, 171, 171);
+    border-radius: 10px;
+    padding: 1vw 1vw;
+    outline: none;
+    margin: 5px;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card {
-  padding: 2em;
+    padding: 2em;
 }
 
-@media (max-width: 768px) {
-  .main-layout {
-    flex-direction: column;
-  }
 
-  .side-nav {
-    width: 100%;
-    position: relative;
-    height: auto;
-    box-shadow: none;
-  }
+@media (max-width: 1400px) {
+    .main-layout {
+        flex-direction: column;
+    }
 
-  .content {
-    margin-left: 0;
-  }
+    .side-nav {
+        position: fixed;
+        flex-direction: row;
+        width: 100%;
+        height: 120px;
+        box-shadow: none;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        .nav-item {
+            font-size: 0.6rem;
+            padding: 2px;
+        }
+        padding-bottom: 20px;
+
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
 }

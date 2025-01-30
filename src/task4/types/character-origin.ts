@@ -1,4 +1,4 @@
 export type CharacterOrigin = {
-    name: string
-    url: string
-}
+  name: string;
+  url: string;
+};

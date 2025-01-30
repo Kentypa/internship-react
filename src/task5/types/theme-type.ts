@@ -1,4 +1,4 @@
 export type ThemeState = {
-    theme: 'light' | 'dark'
-    toggleTheme: () => void;
-}
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+};

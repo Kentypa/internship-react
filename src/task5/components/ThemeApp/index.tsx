@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import ThemeContext from "../../contexts/theme-context";
-import "../../styles/styles.css"
-import {Button} from "../Button";
+import "../../styles/styles.css";
+import { Button } from "../../../components/Button";
 
 export const ThemeApp: React.FC = () => {
-    return (
-        <ThemeContext.Consumer>
-            {({theme, toggleTheme}) => (
-                <Button handleClick={toggleTheme}>Current theme: {theme}</Button>
-            )}
-        </ThemeContext.Consumer>
-    );
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  return <Button handleClick={toggleTheme}>Current theme: {theme}</Button>;
 };

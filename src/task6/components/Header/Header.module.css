@@ -1,0 +1,11 @@
+.bg_light {
+    background-color: #AAAAAA;
+    color: #222222;
+    box-shadow: #222222 3px 3px 3px;
+}
+
+.bg_dark {
+    background-color: #222222;
+    color: #AAAAAA;
+    box-shadow: #AAAAAA 3px 3px 3px;
+}

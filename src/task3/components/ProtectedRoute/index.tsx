@@ -1,15 +1,12 @@
-import {Navigate, Outlet} from "react-router";
+import { Navigate, Outlet } from "react-router";
 import React from "react";
 
 type ProtectedRouteProps = {
-    isAuthorized: boolean;
-}
+  isAuthorized: boolean;
+};
 
-export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({isAuthorized}) => {
-    return (
-        <>
-            {isAuthorized ?
-                <Outlet /> : <Navigate to="/task3/main-page" />}
-        </>
-    )
-}
+export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
+  isAuthorized,
+}) => {
+  return <>{isAuthorized ? <Outlet /> : <Navigate to="/task3/main-page" />}</>;
+};
