@@ -3,8 +3,8 @@ import { Header } from "../Header";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { GridOfDogs } from "../GridOfDogs";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../task5/store.ts";
 import styles from "../Header/Header.module.css";
+import { themeSelector } from "../../features/theme/themeSelector.ts";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -15,13 +15,11 @@ const queryClient = new QueryClient({
 });
 
 export const Task6: React.FC = () => {
-  const theme = useSelector((state: RootState) => state.theme);
+  const theme = useSelector(themeSelector).currentTheme;
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div
-        className={`container flex-col ${styles[`bg_${theme.currentTheme}`]}`}
-      >
+      <div className={`container flex-col ${styles[`bg_${theme}`]}`}>
         <Header />
         <GridOfDogs />
       </div>
