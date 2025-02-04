@@ -32,8 +32,8 @@ export const GridOfDogs: React.FC = () => {
     <div
       className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 p-4 ${styles[`bg_${theme}`]}`}
     >
-      {data?.map((imgUrl: string, index: number) => (
-        <img key={index} src={imgUrl} alt="Dog" className="w-full h-32" />
+      {data?.map((imgUrl: string) => (
+        <img key={imgUrl} src={imgUrl} alt="Dog" className="w-full h-32" />
       ))}
     </div>
   );
